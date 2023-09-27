@@ -1,0 +1,6 @@
+name: 'Current Weather'
+type: module
+description: 'Displays current weather information on the home page.'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+

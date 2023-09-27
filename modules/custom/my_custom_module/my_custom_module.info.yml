@@ -1,0 +1,5 @@
+name: Module Hello World
+description: Hello world custom module for Drupal 9
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10

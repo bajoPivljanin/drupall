@@ -1,0 +1,15 @@
+current_weather.weather:
+  path: '/current-weather'
+  defaults:
+    _controller: 'Drupal\current_weather\Controller\CurrentWeatherController::weather'
+    _title: 'Current Weather!'
+  requirements:
+    _permission: 'access content'
+
+current_weather.getWeather:
+  path: '/current-weather'
+  defaults:
+    _controller: 'Drupal\current_weather\Controller\APIController::getWeather'
+    _title: 'Trenutna temperatura za Suboticu je: '
+  requirements:
+    _permission: 'access content'
