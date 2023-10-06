@@ -1,0 +1,6 @@
+category_import.settings_form:
+  title: category_import
+  description: Configure category_import.
+  parent: system.admin_config_system
+  route_name: category_import.settings_form
+  weight: 10

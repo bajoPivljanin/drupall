@@ -1,0 +1,40 @@
+sync_news.sync_all_news:
+  path: '/sync-news'
+  defaults:
+    _controller: 'Drupal\sync_news\Controller\SyncNewsController::sync_all_news'
+    _title: 'Sync News!'
+  requirements:
+    _permission: 'access content'
+
+sync_news.api_config:
+  path: '/admin/config/system/a-p-i-config'
+  defaults:
+    _form: '\Drupal\sync_news\Form\ConfigApiForm'
+    _title: 'APICredentials'
+  requirements:
+    _permission: 'administer site configuration'
+
+sync_news.enter_data_business:
+  path: '/enter-data-business'
+  defaults:
+    _controller: 'Drupal\sync_news\Controller\SyncNewsController::enter_data_business'
+    _title: 'ARTICLES'
+  requirements:
+    _permission: 'access content'
+
+sync_news.enter_data_tesla:
+  path: '/enter-data-tesla'
+  defaults:
+    _controller: 'Drupal\sync_news\Controller\SyncNewsController::enter_data_tesla'
+    _title: 'ARTICLES'
+  requirements:
+    _permission: 'access content'
+
+sync_news.enter_data_apple:
+  path: '/enter-data-other'
+  defaults:
+    _controller: 'Drupal\sync_news\Controller\SyncNewsController::enter_data_other'
+    _title: 'ARTICLES'
+  requirements:
+    _permission: 'access content'
+

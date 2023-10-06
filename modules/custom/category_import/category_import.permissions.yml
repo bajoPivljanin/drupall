@@ -1,0 +1,4 @@
+administer category_import configuration:
+  title: 'Administer category_import configuration'
+  description: 'Optional description.'
+  restrict access: true

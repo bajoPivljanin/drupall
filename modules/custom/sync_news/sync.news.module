@@ -1,0 +1,46 @@
+<?php
+
+function news_module_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode)
+{
+
+
+  if($entity->hasField("field_news_author"))
+  {
+    $category = "business";
+    $key = "69487902523b410fa96697e4a798cc6d";
+
+    $json = file_get_contents("https://newsapi.org/v2/everything?q=$category&from=2023-09-04&sortBy=publishedAt&apiKey=$key");
+    $response_data = json_decode($json);
+
+    $content = "";
+
+    $i = rand(0,99);
+    $title = $response_data->articles[$i]->title;
+    $desc = $response_data->articles[$i]->description;
+    $link = $response_data->articles[$i]->url;
+    $image = $response_data->articles[$i]->urlToImage;
+    $author = $response_data->articles[$i]->author;
+
+    $entity->set('field_news_author', $category);
+
+    $content .= "<h2> <a href='$link'> {$title}</a></h2>";
+    $content .= "<p> {$desc} </p>";
+    $content .= "<h3> Author: {$author} </h3>";
+    //$content .= "<img src='$image'> </img>";
+    $content .= "<br><br>";
+
+    $authors = $author;
+
+    $entity->set("field_news_author", $authors);
+
+    $entity->set('body', [
+      'value' => $content,
+      'format' => 'basic_html',
+    ]);
+
+    $entity->save();
+  }
+
+
+}
+

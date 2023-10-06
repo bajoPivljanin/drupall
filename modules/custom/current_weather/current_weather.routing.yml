@@ -1,5 +1,5 @@
 current_weather.weather:
-  path: '/current-weather'
+  path: '/weather-now'
   defaults:
     _controller: 'Drupal\current_weather\Controller\CurrentWeatherController::weather'
     _title: 'Current Weather!'

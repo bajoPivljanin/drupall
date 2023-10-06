@@ -1,0 +1,6 @@
+services:
+  category_import.event_subscriber:
+    class: Drupal\category_import\EventSubscriber\CategoryImportSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,23 @@
+category_import.example:
+  path: '/category-import/example'
+  defaults:
+    _title: 'Importer'
+    _controller: 'Drupal\category_import\Controller\CategoryImportController::build'
+  requirements:
+    _permission: 'access content'
+
+category_import.settings_form:
+  path: '/admin/config/system/category-import'
+  defaults:
+    _title: 'category_import settings'
+    _form: 'Drupal\category_import\Form\SettingsForm'
+  requirements:
+    _permission: 'administer category_import configuration'
+
+category_import.import_form:
+  path: '/admin/config/content/import-category'
+  defaults:
+    _form: 'Drupal\category_import\Form\ImportForm'
+    _title: 'Taxonomy Import'
+  requirements:
+    _permission: 'administer category_import configuration'
